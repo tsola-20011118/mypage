@@ -75,3 +75,23 @@ $('.menuPhoto').click(function () {
     });
 });
 
+
+$('.mainElementTitleIcecrimer').click(function () {
+    if (parseInt($(".mainElement").css("width")) * 0.5 == parseInt($(".mainElementIcecrimer").css("width"))) {
+        $(".mainElementIcecrimer").animate({ 'width': '100%' },
+            1000,
+            function () {
+                $(".mainElementExplainIcecrimer").fadeIn()
+            }
+        )
+    } else {
+        $(".mainElementExplainIcecrimer").fadeOut(
+            1000,
+            function () {
+                $(".mainElementIcecrimer").animate({ 'width': '50%' })
+            }
+        )
+    }
+});
+
+
