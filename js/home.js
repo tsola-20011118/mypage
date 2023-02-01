@@ -1,4 +1,12 @@
-
+$(function () {
+    $(window).on('load', function () {
+        $(".loading-anime-wrap").delay(2000).fadeOut('slow');
+    });
+    function loaderClose() {
+        $(".loading-anime-wrap").fadeOut('slow');
+    }
+    setTimeout(loaderClose, 10000);
+});
 
 
 $(window).on('load', function(){
@@ -94,4 +102,21 @@ $('.mainElementTitleIcecrimer').click(function () {
     }
 });
 
+$('.mainElementTitleAtoz').click(function () {
+    if (parseInt($(".mainElement").css("width")) * 0.5 == parseInt($(".mainElementAtoz").css("width"))) {
+        $(".mainElementAtoz").animate({ 'width': '100%' },
+            1000,
+            function () {
+                $(".mainElementExplainAtoz").fadeIn()
+            }
+        )
+    } else {
+        $(".mainElementExplainAtoz").fadeOut(
+            1000,
+            function () {
+                $(".mainElementAtoz").animate({ 'width': '50%' })
+            }
+        )
+    }
+});
 
